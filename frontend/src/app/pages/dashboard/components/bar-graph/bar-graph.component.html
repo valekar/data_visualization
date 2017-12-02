@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      <label> Select a Team</label>
+      <select class="form-control" [(ngModel)]="selectedTeamId" (change)="teamSelection()">
+        <option *ngFor="let team of teamList" [ngValue]="team.team_api_id">{{team.team_long_name}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row" *ngIf="matches">
+
+  <div class="col-2"></div>
+  <div class="col-10">
+    <h3>Team <strong>{{matches[0].team_name}}</strong> win-draw-loss percentages</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-11">
+    <div #myBarGraph></div>
+  </div>
+</div>
+
+<br>
+<br>
+<hr>
+<div class="row" *ngIf="toggleSpiderChart">
+  <div class="col-1">
+
+  </div>
+  <div class="col-11">
+    <h3> Team Attributes </h3>
+    <div spider-chart [spiderData]="teamAttribute">
+      <div id="spiderGraphId"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="toggleNoData">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <h3 class="text-muted"> No Data Available</h3>
+  </div>
+  <div class="col-3"></div>
+
+</div>

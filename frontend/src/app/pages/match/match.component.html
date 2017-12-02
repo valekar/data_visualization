@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <nb-card>
+      <nb-card-header>Country Match Stats</nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-12">
+            <h4 class="text-center">Total matches played in different countries</h4>
+            <div map-chart [mapData]="geoData" [countryMatches]="countryMatches">
+              <div id="mapId"></div>
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
